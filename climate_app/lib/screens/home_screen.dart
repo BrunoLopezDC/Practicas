@@ -8,19 +8,17 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width; // [cite: 72, 73]
+    final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
       appBar: AppBar(title: const Text('Clima Actual'), centerTitle: true),
       body: Center(
-        child: width > 600 // [cite: 74]
-            ? _buildLandscapeLayout(context) // Pantalla ancha: Row [cite: 75]
-            : _buildPortraitLayout(context), // Pantalla estrecha: Column [cite: 77]
+        child: width > 600
+            ? _buildLandscapeLayout(context)
+            : _buildPortraitLayout(context),
       ),
     );
   }
-
-  // --- MODO VERTICAL (Tu código original) ---
   Widget _buildPortraitLayout(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -52,13 +50,10 @@ class HomeScreen extends StatelessWidget {
       ],
     );
   }
-
-  // --- MODO HORIZONTAL (Adaptado) ---
   Widget _buildLandscapeLayout(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        // Mitad izquierda
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
@@ -76,7 +71,6 @@ class HomeScreen extends StatelessWidget {
             Text('Humedad: 65% | Viento: 12 km/h'),
           ],
         ),
-        // Mitad derecha
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
