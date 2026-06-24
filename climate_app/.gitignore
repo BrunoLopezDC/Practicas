@@ -3,8 +3,12 @@
 *.log
 *.pyc
 *.swp
+*.jks
+*.keystore
+local.properties
 .DS_Store
 .atom/
+.env
 .build/
 .buildlog/
 .history
